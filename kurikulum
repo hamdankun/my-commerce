@@ -1,0 +1,7 @@
+kurikulum
+	- initial app
+	- initial database connection
+	- initial model table and configuration
+		- product
+		- order
+		- order detail
