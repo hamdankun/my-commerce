@@ -5,3 +5,13 @@ kurikulum
 		- product
 		- order
 		- order detail
+	- initial router controller view
+		- router
+		- controller
+		- view
+	- initial bootstrap and layouting
+		- main page
+		- home page
+		- product page
+		- user page
+		- integrate with bootstrap
