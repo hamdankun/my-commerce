@@ -23,6 +23,11 @@ body {
 	justify-content: space-between;
 }
 
+.align-center-full {
+  align-items: center;
+  justify-content: center; 
+}
+
 .product-selection {
   display: flex;
   align-items: center;
