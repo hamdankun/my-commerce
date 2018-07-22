@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,6 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.index');
+    	$products = Product::orderBy('id', 'desc')->limit(20)->get()->chunk(4);
+        return view('home.index', ['products' => $products]);
     }
 }

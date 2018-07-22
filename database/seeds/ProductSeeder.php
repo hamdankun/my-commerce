@@ -11,6 +11,7 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
+    	App\Product::truncate();
         factory(App\Product::class, 50)->create();
     }
 }

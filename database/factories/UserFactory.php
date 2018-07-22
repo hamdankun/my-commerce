@@ -28,6 +28,6 @@ $factory->define(App\Product::class, function (Faker $faker) {
         'brand' => $faker->sentence(3),
         'price' => random_int(10000, 999999),
         'category' => $faker->sentence(3),
-        'image_path' => $faker->imageUrl,
+        'image_path' => $faker->imageUrl(640, 480, 'technics'),
     ];
 });
