@@ -35,20 +35,7 @@
 					<div class="row mt-4">
 						@foreach($chunks as $key => $product)
 						    <div class="col-sm-3">
-								<div class="card fixed-card">
-									  <img class="card-img-top" src="{{ $product->image_path }}" alt="Card image cap">
-									  <div class="card-body">
-										    <h5 class="card-title">{{$product->name}}</h5>
-										    <p class="card-text">
-										    	{{$product->brand}}
-										    </p>
-									  </div>
-									  <div class="card-footer d-flex flex-row">
-									  		<input type="number" name="qty" class="form-control form-control-sm text-center" value="1">
-									  		&nbsp;
-										    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> Add To Cart</a>
-									  </div>
-								</div>
+								@include('components.card', ['product' => $product])
 						    </div>
 					    @endforeach
 					</div>

@@ -29,24 +29,18 @@
 		</div>
 		{{-- Ubah Disini berdasarkan database --}}
 		<div class="product-list">
-				@for($j = 0; $j < 3; $j++)
-					<div class="row mt-4">
-						@for($i = 0; $i < 4; $i++)
-						    <div class="col-sm-3">
-								<div class="card">
-									  <img class="card-img-top" src="http://lorempixel.com/640/480/technics" alt="Card image cap">
-									  <div class="card-body">
-										    <h5 class="card-title">Card title</h5>
-										    <p class="card-text">
-										    	Some quick example text to build on the card title and make up the bulk of the card's content
-										    </p>
-										    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add To Cart</a>
-									  </div>
-								</div>
-						    </div>
-					    @endfor
-					</div>
-			    @endfor
+			@foreach($products->chunk(4) as $key => $chunks)
+				<div class="row mt-4">
+					@foreach($chunks as $key => $product)
+					    <div class="col-sm-3">
+							@include('components.card', ['product' => $product])
+					    </div>
+				    @endforeach
+				</div>
+		    @endforeach
+		    <div class="d-flex align-center-full mt-3">
+		    	{{ $products->links() }}
+		    </div>
 		</div>
 	</div>
 @endsection

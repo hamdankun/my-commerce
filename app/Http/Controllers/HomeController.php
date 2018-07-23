@@ -7,6 +7,20 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+    /**
+     * Product Model instance 
+     * @var Product
+     */
+    protected $product;
+
+    /**
+     * Inisialisasi instance class product
+     * @param Product $product
+     */
+    public function __construct(Product $product) {
+        $this->product = $product;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-    	$products = Product::orderBy('id', 'desc')->limit(20)->get()->chunk(4);
+    	$products = $this->product->limit(20)->get()->chunk(4);
         return view('home.index', ['products' => $products]);
     }
 }
