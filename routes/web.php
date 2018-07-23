@@ -28,6 +28,10 @@ Route::name('products.')->prefix('products')->group(function() {
 	Route::get('/', 'ProductController@index')->name('index');	
 });
 
+Route::name('auth.')->namespace('Auth')->prefix('auth')->group(function() {
+	Route::post('/', 'AuthController@login')->name('login');	
+});
+
 /**
  * Ini adalah routing untuk menampikan halaman member
  */

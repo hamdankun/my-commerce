@@ -41,3 +41,8 @@ body {
 .text-center {
   text-align: center;
 }
+
+.card-login {
+  width: 30%;
+  margin: 0 auto;
+}
