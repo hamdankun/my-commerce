@@ -29,7 +29,8 @@ Route::name('products.')->prefix('products')->group(function() {
 });
 
 Route::name('auth.')->namespace('Auth')->prefix('auth')->group(function() {
-	Route::post('/', 'AuthController@login')->name('login');	
+	Route::post('/login', 'AuthController@login')->name('login');	
+	Route::post('/logout', 'AuthController@logout')->name('logout');	
 });
 
 /**

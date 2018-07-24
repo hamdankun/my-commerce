@@ -21,9 +21,12 @@
 
   	@include('main.header')
 
+    @include('toast::messages')
+
   	@yield('content')
 
     @include('main.footer')
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
