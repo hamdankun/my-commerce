@@ -159,7 +159,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Grimthorr\LaravelToast\ServiceProvider::class
+        Grimthorr\LaravelToast\ServiceProvider::class,
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class
 
     ],
 
@@ -209,7 +210,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Toast' => Grimthorr\LaravelToast\Facade::class
+        'Toast' => Grimthorr\LaravelToast\Facade::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class
     ],
 
 ];
