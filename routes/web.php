@@ -11,6 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/**
+ * Ini adalah routing yang pertama kali di akses
+ */
+Route::redirect('/', '/home');
+
+/**
+ * Ini adalah routing untuk menampilkan halaman home
+ */
+Route::get('/home', 'HomeController@index')->name('home');
+
+/**
+ * Ini adalah routing untuk menampilkan halaman products
+ */
+Route::name('products.')->prefix('products')->group(function() {
+	Route::get('/', 'ProductController@index')->name('index');
+});
+
+/**
+ * Ini adalah routing untuk menampikan halaman member
+ */
+Route::name('member.')->prefix('member')->group(function() {
+	Route::get('/', 'MemberController@index')->name('index');
+});
+
+Route::prefix('test')->group(function() {
+	Route::get('/test-database-connection', function() {
+    	dd(['Connection Information' => DB::connection()->getPdo(), 'Database Name' => DB::connection()->getDatabaseName()]);
+	});
 });
